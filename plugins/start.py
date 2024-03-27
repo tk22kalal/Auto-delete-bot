@@ -93,10 +93,10 @@ async def start_command(client: Client, message: Message):
 
             except:
                 pass
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video / file will be deleted in 5 minutes (Due to Pornography issues).\n\n📌 Please forward this video / file to somewhere else and start downloading there.( Bot devloped  by @oftenes )")
+        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video/file will be deleted in 5 minutes (Due to Pornography issues).\n\n📌 Please forward this video/file to somewhere else and start downloading there.\n Bot devloped  by @infoxe")
         await asyncio.sleep(SECONDS)
         await f.delete()
-        await k.edit_text("Your video / file is successfully deleted !")
+        await k.edit_text("Your video/file is successfully deleted ! \n👨‍💻 DEVLOPER => @oftenes")
 
 
         return
