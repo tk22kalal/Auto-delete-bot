@@ -19,7 +19,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text = f"<b>OUR PUBLIC BOT :</b> <a href='https://t.me/publicfilesharerobot'>Public File Share Bot</a> \n<b>📝 Language :</b> <a href='https://python.org'>Python 3</a> \n<b>📚 Library :</b> <a href='https://pyrogram.org'>Pyrogram {__version__}</a> \n<b>📢 Channel :</b> <a href='https://t.me/Publicfille'>PUBLIC SUPPORT</a> \n<b>🧑‍💻 Developer :</b> <a href='t.me/infoxe'> 𝙃𝙖𝙢𝙯𝙖 </a>",
+            text = f"<b>OUR PUBLIC BOT :</b> <a href='https://t.me/publicfilesharerobot'> PUBLIC BOT </a> \n<b>📝 Language :</b> <a href='https://python.org'>Python 3</a> \n<b>📚 Library :</b> <a href='https://pyrogram.org'>Pyrogram {__version__}</a> \n<b>📢 Channel :</b> <a href='https://t.me/Publicfille'>PUBLIC SUPPORT</a> \n<b>🧑‍💻 Developer :</b> <a href='t.me/infoxe'> 𝙃𝙖𝙢𝙯𝙖 </a>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [ [ InlineKeyboardButton(" Source code ", url="https://t.me/+NeqCUg-QDxo2Nzll") ],
