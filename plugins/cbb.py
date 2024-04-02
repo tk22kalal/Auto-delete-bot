@@ -19,7 +19,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text = f"<b>OUR PUBLIC BOT :</b> <a href='https://t.me/publicfilesharerobot'> file share bot </a>  \n<b>📢 Channel :</b> <a href='https://t.me/Publicfille'>Public Channel</a> \n<b>🧑‍💻 Developer :</b> <a href='t.me/infoxe'> 𝙃𝙖𝙢𝙯𝙖 </a>",
+            text = f"<b>OUR PUBLIC BOT :</b> <a href='https://t.me/publicfilesharerobot'> file share bot </a>  \n<b> 👨‍💻 Devloper:</b> <a href='https://t.me/ifeelscam'>SHAIKH ALI</a> \n<b> 🤖 Creator :</b> <a href='t.me/infoxe'> 𝙃𝙖𝙢𝙯𝙖 </a>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [ [ InlineKeyboardButton(" Source code ", url="https://t.me/+NeqCUg-QDxo2Nzll") ],
