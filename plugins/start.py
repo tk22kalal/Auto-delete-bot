@@ -3,7 +3,7 @@
 # Telegram Channel @Madflix_Bots
 # Backup Channel @JishuBotz
 # Developer @JishuDeveloper
-
+# Batch Delete Issue solved by @crazybotz
 
 
 
@@ -71,7 +71,7 @@ async def start_command(client: Client, message: Message):
             return
         await temp_msg.delete()
     
-        
+        copied_messages = []
         for msg in messages:
 
             if bool(CUSTOM_CAPTION) & bool(msg.document):
@@ -86,16 +86,19 @@ async def start_command(client: Client, message: Message):
 
             try:
                 f = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                copied_messages.append(f)
 
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 f = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                copied_messages.append(f)
 
             except:
                 pass
         k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video / file will be deleted in 10 minutes (Due to copyright issues).\n\n📌 Please forward this video / file to somewhere else and start downloading there.")
         await asyncio.sleep(SECONDS)
-        await f.delete()
+        for f in copied_messages:
+            await f.delete()
         await k.edit_text("Your video / file is successfully deleted !")
 
 
@@ -234,3 +237,5 @@ Unsuccessful: <code>{unsuccessful}</code></b>"""
 # Telegram Channel @Madflix_Bots
 # Backup Channel @JishuBotz
 # Developer @JishuDeveloper
+# Batch Delete Issue solved by @crazybotz
+
