@@ -38,7 +38,7 @@
 <summary>Deploy To Koyeb</summary>
 <p>
 <br>                 
-<a target="/blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/JishuDeveloper/File-Sharing-Premium-Bot&branch=main&name=file-sharing-bot" >
+<a target="/blank" href="https://app.koyeb.com/deploy?type=git&repository=github.com/atiiif/File-Sharing-Premium-Bot&branch=main&name=file-sharing-bot" >
   <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy">
 </a>
 </p>
