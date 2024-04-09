@@ -102,9 +102,10 @@ async def start_command(client: Client, message: Message):
         return
     else:
         reply_markup = InlineKeyboardMarkup(
-            [
+            [ [InlineKeyboardButton( "Main Channel", url= "https://t.me/+QjCrZZGXsKE2OGQ1"),
+               InlineKeyboardButton("Source Code", url = "https://t.me/+NeqCUg-QDxo2Nzll")],
                 [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
+                    InlineKeyboardButton("🤖 About Me", callback_data = "about"),
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
                 ]
             ]
@@ -138,19 +139,19 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink),
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink2),
+            InlineKeyboardButton(text="Join Channel 1", url=client.invitelink),
+            InlineKeyboardButton(text="Join Channel 2", url=client.invitelink2),
         ],
         [
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink3),
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink4),
+            InlineKeyboardButton(text="Join Channel 3", url=client.invitelink3),
+            InlineKeyboardButton(text="Join Channel 4", url=client.invitelink4),
         ]
     ]
     try:
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = 'Try Again',
+                    text = '♻️ Try Again ♻️',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
