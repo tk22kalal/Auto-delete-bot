@@ -22,7 +22,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             text = f"<b>UPDATE CHANNEL:</b> <a href='https://t.me/Publicfille'>CLICK HERE</a> \n<b>📝 Language :</b> <a href='https://python.org'>Python 3</a>  \n<b>🧑‍💻 Developer :</b> <a href='t.me/ifeelscam'>HAMZA</a>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
-                [
+                [ [InlineKeyboardButton("Source Code", url = "https://t.me/+NeqCUg-QDxo2Nzll"),
+                  InlineKeyboardButton("Update Channel", url = "https://t.me/publicfille")],
                     [
                         InlineKeyboardButton("🔒 Close", callback_data = "close")
                     ]
