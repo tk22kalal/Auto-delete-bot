@@ -93,7 +93,7 @@ async def start_command(client: Client, message: Message):
 
             except:
                 pass
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video/file will be deleted in 10 minutes (Due to copyright issues).\n\n📌 Please forward this video/file to somewhere else and start downloading there.\n Bot Channel @Publicfille")
+        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video/file will be deleted in 10 minutes (Due to copyright issues).\n\n📌 Please forward this video/file to somewhere else and start downloading there.<b>")
         await asyncio.sleep(SECONDS)
         await f.delete()
         await k.edit_text("Your video/file is successfully deleted ! \n👇 Check Our Public Bot 👇 \n @PublicfileShareRobot")
@@ -102,7 +102,9 @@ async def start_command(client: Client, message: Message):
         return
     else:
         reply_markup = InlineKeyboardMarkup(
-            [ [ InlineKeyboardButton("Source Code", url="https://t.me/+NeqCUg-QDxo2Nzll") ],
+            [ [ InlineKeyboardButton("Source Code", url="https://t.me/+NeqCUg-QDxo2Nzll"), 
+              InlineKeyboardButton("Update Channel",url="https://t.me/Publicfille) 
+              ],
                 [
                     InlineKeyboardButton("🤖 About Me", callback_data = "about"),
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
