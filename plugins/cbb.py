@@ -11,11 +11,11 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text = f"<b>👨‍💻 Devloper:</b> <a href='https://t.me/ifeelscam'>SHAIKH ALI</a> \n<b> 🤖 Creator :</b> <a href='t.me/InkaLinks'> UNKNOWN</a>",
+            text = f"<b>👨‍💻 𝘋𝘦𝘷𝘭𝘰𝘱𝘦𝘳 :</b> <a href='https://t.me/ifeelscam'>sʜᴀɪᴋʜ ᴀʟɪ</a> \n<b> 🤖 𝘊𝘳𝘦𝘢𝘵𝘰𝘳 :</b> <a href='t.me/InkaLinks'> ᴄʜɪᴘs</a>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [ [ InlineKeyboardButton(" Source code ", url="https://t.me/+NeqCUg-QDxo2Nzll"),
-                  InlineKeyboardButton("Devloper" , url= "tg://user?id=6076683960")],
+                  InlineKeyboardButton("Bot Channel" , url= "https://t.me/INKALINKS")],
                     [
                         InlineKeyboardButton("🔒 Close", callback_data = "close")
                     ]
