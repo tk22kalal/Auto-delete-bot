@@ -1,8 +1,4 @@
-# Jishu Developer 
-# Don't Remove Credit 🥺
-# Telegram Channel @Madflix_Bots
-# Backup Channel @JishuBotz
-# Developer @JishuDeveloper
+
 
 
 
@@ -138,7 +134,7 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
     
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-    buttons = [ 
+    buttons = [ [InlineKeyboardButton("Verification", url="https://t.me/Publicfilesharerobot?start=Z2V0LTI4NjU0NzI2MTE5NDE5NA")],
         [
             InlineKeyboardButton(text="Join Channel", url=client.invitelink),
             InlineKeyboardButton(text="Join Channel", url=client.invitelink2),
@@ -231,9 +227,3 @@ Unsuccessful: <code>{unsuccessful}</code></b>"""
 
 
 
-
-# Jishu Developer 
-# Don't Remove Credit 🥺
-# Telegram Channel @Madflix_Bots
-# Backup Channel @JishuBotz
-# Developer @JishuDeveloper
