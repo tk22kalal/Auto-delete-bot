@@ -100,7 +100,7 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [ [ InlineKeyboardButton("Main Channel", url="https://t.me/KissAnime_Seasonal"), 
               InlineKeyboardButton("Source Code",url="https://t.me/+NeqCUg-QDxo2Nzll") 
-              ],
+              ],[InlineKeyboardButton("Bot Channel",url="https://t.me/publicfille")],
                 [
                     InlineKeyboardButton("🤖 About Me", callback_data = "about"),
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
