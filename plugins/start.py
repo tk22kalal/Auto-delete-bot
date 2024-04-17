@@ -92,7 +92,7 @@ async def start_command(client: Client, message: Message):
         k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video will be deleted in 24 hours (Due to content issues).<b>")
         await asyncio.sleep(SECONDS)
         await f.delete()
-        await k.edit_text("Your video/file is successfully deleted ! \n Bot Channel @Inkalinks")
+        await k.edit_text("Your video/file is successfully deleted ! \n Bot Channel @Publicfille")
 
 
         return
