@@ -89,7 +89,7 @@ async def start_command(client: Client, message: Message):
 
             except:
                 pass
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video/file will be deleted in 4 hours (Due to copyright issues).\n\n📌 Please forward this video/file to somewhere else and start downloading there.\nBot Channel @Publicfille.<b>")
+        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video/file will be deleted in 10 minutes (Due to copyright issues).\n\n📌 Please forward this video/file to somewhere else and start downloading there.\nBot Channel @Publicfille.<b>")
         await asyncio.sleep(SECONDS)
         await f.delete()
         await k.edit_text("Your video/file is successfully deleted ! \n Bot Channel @Publicfille")
@@ -98,7 +98,7 @@ async def start_command(client: Client, message: Message):
         return
     else:
         reply_markup = InlineKeyboardMarkup(
-            [ [ InlineKeyboardButton("Main Channel", url="https://t.me/Tamil_Aime_Files"), 
+            [ [ InlineKeyboardButton("Main Channel", url="https://t.me/KissAnime_Seasonal"), 
               InlineKeyboardButton("Source Code",url="https://t.me/+NeqCUg-QDxo2Nzll") 
               ],[InlineKeyboardButton("Bot Channel",url="https://t.me/publicfille")],
                 [
@@ -134,7 +134,7 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
     
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-    buttons = [  [ InlineKeyboardButton(text="Join Channel", url="https://t.me/Tamil_Aime_Files")],
+    buttons = [  [ InlineKeyboardButton(text="Join Channel", url="https://t.me/KissAnime_Seasonal")],
         [
             InlineKeyboardButton(text="Join Channel", url=client.invitelink),
             InlineKeyboardButton(text="Join Channel", url=client.invitelink2),
