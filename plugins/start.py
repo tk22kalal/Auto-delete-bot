@@ -1,4 +1,8 @@
-
+# Jishu Developer 
+# Don't Remove Credit 🥺
+# Telegram Channel @Madflix_Bots
+# Backup Channel @JishuBotz
+# Developer @JishuDeveloper
 
 
 
@@ -89,10 +93,10 @@ async def start_command(client: Client, message: Message):
 
             except:
                 pass
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video/file will be deleted in 10 minutes (Due to copyright issues).\n\n📌 Please forward this video/file to somewhere else and start downloading there.\nBot Channel @Publicfille.<b>")
+        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video / file will be deleted in 10 minutes (Due to copyright issues).\n\n📌 Please forward this video / file to somewhere else and start downloading there.")
         await asyncio.sleep(SECONDS)
         await f.delete()
-        await k.edit_text("Your video/file is successfully deleted ! \n Bot Channel @Publicfille")
+        await k.edit_text("Your video / file is successfully deleted !")
 
 
         return
@@ -144,7 +148,7 @@ async def not_joined(client: Client, message: Message):
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = '♻️ Try Again ♻️',
+                    text = 'Try Again',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
@@ -227,3 +231,9 @@ Unsuccessful: <code>{unsuccessful}</code></b>"""
 
 
 
+
+# Jishu Developer 
+# Don't Remove Credit 🥺
+# Telegram Channel @Madflix_Bots
+# Backup Channel @JishuBotz
+# Developer @JishuDeveloper
