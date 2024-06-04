@@ -67,11 +67,11 @@ async def start_command(client: Client, message: Message):
         message_count = 0
 
         for msg in messages:
-            if message_count >= 4:
+            if message_count >= 3:
                 if not limit_exceeded:
                     limit_exceeded = True
                     await client.send_message(chat_id=message.from_user.id, text="LIMIT EXCEEDED")
-                    await asyncio.sleep(10)
+                    await asyncio.sleep(30)
                 break
 
             if CUSTOM_CAPTION and msg.document:
