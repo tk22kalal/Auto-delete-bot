@@ -26,8 +26,6 @@ async def delete_after_delay(message: Message, delay):
     await message.delete()
 
 
-
-
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
@@ -37,7 +35,7 @@ async def start_command(client: Client, message: Message):
         except:
             pass
     text = message.text
-    if len(text)>7:
+    if len(text) > 7:
         try:
             base64_string = text.split(" ", 1)[1]
         except:
@@ -50,16 +48,7 @@ async def start_command(client: Client, message: Message):
                 end = int(int(argument[2]) / abs(client.db_channel.id))
             except:
                 return
-            if start <= end:
-                ids = range(start,end+1)
-            else:
-                ids = []
-                i = start
-                while True:
-                    ids.append(i)
-                    i -= 1
-                    if i < end:
-                        break
+            ids = range(start, end + 1) if start <= end else list(range(start, end - 1, -1))
         elif len(argument) == 2:
             try:
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
@@ -72,11 +61,11 @@ async def start_command(client: Client, message: Message):
             await message.reply_text("Something went wrong..!")
             return
         await temp_msg.delete()
-    
+
         copied_messages = []
         limit_exceeded = False
         message_count = 0
-        
+
         for msg in messages:
             if message_count >= 4:
                 if not limit_exceeded:
@@ -84,14 +73,14 @@ async def start_command(client: Client, message: Message):
                     await client.send_message(chat_id=message.from_user.id, text="LIMIT EXCEEDED")
                     await asyncio.sleep(10)
                 break
-        
+
             if CUSTOM_CAPTION and msg.document:
                 caption = CUSTOM_CAPTION.format(previouscaption=msg.caption.html if msg.caption else "", filename=msg.document.file_name)
             else:
                 caption = msg.caption.html if msg.caption else ""
-        
+
             reply_markup = None if DISABLE_CHANNEL_BUTTON else msg.reply_markup
-        
+
             try:
                 f = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
                 copied_messages.append(f)
@@ -103,14 +92,14 @@ async def start_command(client: Client, message: Message):
                 message_count += 1
             except:
                 pass
-        
+
         k = await client.send_message(chat_id=message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video / file will be deleted in {AUTO_DELETE_TIME} SECOND (Due to copyright issues).\n\n📌 Please forward this video / file to somewhere else and start downloading there.")
         await asyncio.sleep(AUTO_DELETE_TIME)
         for f in copied_messages:
             await f.delete()
         await k.edit_text("Your video / file is successfully deleted !")
         return
-     else:
+    else:
         reply_markup = InlineKeyboardMarkup(
             [
                 [
@@ -131,7 +120,8 @@ async def start_command(client: Client, message: Message):
             disable_web_page_preview=True,
             quote=True
         )
-        return   
+        return
+
 
 
     
