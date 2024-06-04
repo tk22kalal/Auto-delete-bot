@@ -55,23 +55,23 @@ async def start_command(client: Client, message: Message):
             except:
                 return
         temp_msg = await message.reply("Please wait...")
+        
         try:
             messages = await get_messages(client, ids)
-        except:
+        except Exception as e:
+            print(f"Error getting messages: {e}")
             await message.reply_text("Something went wrong..!")
             return
-        await temp_msg.delete()
+        finally:
+            await temp_msg.delete()
 
         copied_messages = []
-        limit_exceeded = False
         message_count = 0
 
         for msg in messages:
             if message_count >= 3:
-                if not limit_exceeded:
-                    limit_exceeded = True
-                    await client.send_message(chat_id=message.from_user.id, text="LIMIT EXCEEDED")
-                    await asyncio.sleep(30)
+                await client.send_message(chat_id=message.from_user.id, text="LIMIT EXCEEDED")
+                await asyncio.sleep(20)
                 break
 
             if CUSTOM_CAPTION and msg.document:
@@ -90,15 +90,16 @@ async def start_command(client: Client, message: Message):
                 f = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
                 copied_messages.append(f)
                 message_count += 1
-            except:
+            except Exception as e:
+                print(f"Error copying message: {e}")
                 pass
 
-        k = await client.send_message(chat_id=message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video / file will be deleted in {AUTO_DELETE_TIME} SECOND (Due to copyright issues).\n\n📌 Please forward this video / file to somewhere else and start downloading there.")
+        k = await client.send_message(chat_id=message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video / file will be deleted in {AUTO_DELETE_TIME} SECONDS (Due to copyright issues).\n\n📌 Please forward this video / file to somewhere else and start downloading there.")
         await asyncio.sleep(AUTO_DELETE_TIME)
+        
         for f in copied_messages:
             await f.delete()
         await k.edit_text("Your video / file is successfully deleted !")
-        return
     else:
         reply_markup = InlineKeyboardMarkup(
             [
