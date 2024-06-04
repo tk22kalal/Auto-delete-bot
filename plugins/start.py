@@ -21,7 +21,9 @@ from database.database import add_user, del_user, full_userbase, present_user
 
 # add time im seconds for waitingwaiting before delete 
 # 1 minutes = 60, 2 minutes = 60×2=120, 5 minutes = 60×5=300
-SECONDS = int(os.getenv("SECONDS", "600"))
+async def delete_after_delay(message: Message, delay):
+    await asyncio.sleep(AUTO_DELETE_TIME)
+    await message.delete()
 
 
 
@@ -96,7 +98,7 @@ async def start_command(client: Client, message: Message):
             except:
                 pass
         k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis video / file will be deleted in 10 minutes (Due to copyright issues).\n\n📌 Please forward this video / file to somewhere else and start downloading there.")
-        await asyncio.sleep(SECONDS)
+        await asyncio.sleep(AUTO_DELETE_TIME)
         for f in copied_messages:
             await f.delete()
         await k.edit_text("Your video / file is successfully deleted !")
