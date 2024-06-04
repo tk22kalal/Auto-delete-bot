@@ -31,6 +31,8 @@ FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 
 SECONDS = int(os.getenv("SECONDS", "600")) # auto delete in seconds
 
+AUTO_DELETE = int(environ.get("AUTO_DELETE", "30")) # Time in Minutes
+AUTO_DELETE_TIME = int(environ.get("AUTO_DELETE_TIME", "1800")) # Time in Seconds
 
 
 PORT = os.environ.get("PORT", "8080")
